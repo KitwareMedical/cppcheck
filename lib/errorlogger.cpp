@@ -27,7 +27,7 @@
 #include <cassert>
 #include <iomanip>
 #include <sstream>
-#include <array>
+#include <vector>
 
 InternalError::InternalError(const Token *tok, const std::string &errorMsg, Type type) :
     token(tok), errorMessage(errorMsg)
@@ -131,7 +131,8 @@ bool ErrorLogger::ErrorMessage::deserialize(const std::string &data)
     _inconclusive = false;
     _callStack.clear();
     std::istringstream iss(data);
-    std::array<std::string, 5> results;
+    std::vector<std::string> results;
+    results.resize( 5 );
     std::size_t elem = 0;
     while (iss.good()) {
         unsigned int len = 0;

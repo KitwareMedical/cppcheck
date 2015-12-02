@@ -896,7 +896,7 @@ const Library::WarnInfo* Library::getWarnInfo(const Token* ftok) const
     if (isNotLibraryFunction(ftok))
         return nullptr;
     std::map<std::string, WarnInfo>::const_iterator i = functionwarn.find(functionName(ftok));
-    if (i == functionwarn.cend())
+    if (i == functionwarn.end())
         return nullptr;
     return &i->second;
 }

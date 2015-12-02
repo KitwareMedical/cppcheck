@@ -944,7 +944,7 @@ void CheckStl::string_c_str()
 
                 unsigned int numpar = 0;
                 c_strFuncParam.insert(std::make_pair(func->tokenDef->str(), numpar)); // Insert function as dummy, to indicate that there is at least one function with that name
-                for (std::list<Variable>::const_iterator var = func->argumentList.cbegin(); var != func->argumentList.cend(); ++var) {
+                for (std::list<Variable>::const_iterator var = func->argumentList.begin(); var != func->argumentList.end(); ++var) {
                     numpar++;
                     if (var->isStlStringType() && (!var->isReference() || var->isConst()))
                         c_strFuncParam.insert(std::make_pair(func->tokenDef->str(), numpar));
@@ -1135,7 +1135,7 @@ void CheckStl::checkAutoPointer()
                     }
                     if (Token::Match(tok3, "( %var%")) {
                         std::map<unsigned int, const std::string>::const_iterator it = mallocVarId.find(tok3->next()->varId());
-                        if (it != mallocVarId.cend()) {
+                        if (it != mallocVarId.end()) {
                             // pointer on the memory allocated by malloc used in the auto pointer constructor -> error
                             autoPointerMallocError(tok2->next(), it->second);
                         }

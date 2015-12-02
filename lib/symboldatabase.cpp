@@ -3659,9 +3659,9 @@ namespace {
 bool SymbolDatabase::isReservedName(const std::string& iName) const
 {
     if (isCPP())
-        return cpp_keywords.find(iName) != cpp_keywords.cend();
+        return cpp_keywords.find(iName) != cpp_keywords.end();
     else
-        return c_keywords.find(iName) != c_keywords.cend();
+        return c_keywords.find(iName) != c_keywords.end();
 }
 
 static const Token * parsedecl(const Token *type, ValueType * const valuetype);
