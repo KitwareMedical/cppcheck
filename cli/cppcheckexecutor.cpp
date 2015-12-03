@@ -125,7 +125,7 @@ bool CppCheckExecutor::parseFromArgs(CppCheck *cppcheck, int argc, const char* c
     // Output a warning for the user if he tries to exclude headers
     bool warn = false;
     const std::vector<std::string>& ignored = parser.GetIgnoredPaths();
-    for (std::vector<std::string>::const_iterator i = ignored.cbegin(); i != ignored.cend(); ++i) {
+    for (std::vector<std::string>::const_iterator i = ignored.begin(); i != ignored.end(); ++i) {
         if (Path::isHeader(*i)) {
             warn = true;
             break;
