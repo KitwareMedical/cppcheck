@@ -7,6 +7,9 @@ file(GLOB mainfile "main.cpp")
 list(REMOVE_ITEM srcs ${mainfile})
 
 link_libraries(${PROJECT_NAME} tinyxml)
+if( MSVC )
+  link_libraries(${PROJECT_NAME} Shlwapi)
+endif( MSVC )
 
 add_library(cli_lib OBJECT ${hdrs} ${srcs})
 
