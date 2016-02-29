@@ -22,5 +22,5 @@ install(TARGETS cppcheck
     COMPONENT applications)
 
 install(FILES ${cfgs}
-   DESTINATION share/${PROJECT_NAME}/
+   DESTINATION bin/cfg
    COMPONENT headers)
