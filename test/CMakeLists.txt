@@ -20,7 +20,7 @@ if (BUILD_TESTS)
     add_custom_command(
         TARGET copy_cfg
         COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/cfg"
-            "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/cfg")
+            "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 
     add_dependencies(testrunner copy_cfg)
 
