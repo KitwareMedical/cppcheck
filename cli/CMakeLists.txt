@@ -24,3 +24,7 @@ install(TARGETS cppcheck
 install(FILES ${cfgs}
    DESTINATION bin
    COMPONENT headers)
+
+install(FILES ${cfgs}
+   DESTINATION bin/cfg
+   COMPONENT headers)
