@@ -28,3 +28,7 @@ install(FILES ${cfgs}
 install(FILES ${cfgs}
    DESTINATION bin/cfg
    COMPONENT headers)
+
+install(FILES ${cfgs}
+   DESTINATION share/${PROJECT_NAME}
+   COMPONENT headers)
