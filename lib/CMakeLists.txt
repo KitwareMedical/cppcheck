@@ -35,6 +35,7 @@ else()
 endif()
 
 add_library(${PROJECT_NAME} ${srcs_lib} ${hdrs})
+target_link_libraries(${PROJECT_NAME} tinyxml)
 
 if (HAVE_RULES)
     target_link_libraries(${PROJECT_NAME} pcre)
